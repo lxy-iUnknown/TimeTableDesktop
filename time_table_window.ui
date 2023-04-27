@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>table_window</class>
+ <widget class="QMainWindow" name="table_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>840</width>
+    <height>510</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+    <stylestrategy>PreferAntialias</stylestrategy>
+   </font>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>课程表</string>
+  </property>
+  <widget class="QWidget" name="widget">
+   <layout class="QGridLayout">
+    <item row="1" column="1" colspan="3">
+     <widget class="QTableView" name="table_data">
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ContiguousSelection</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_begin_date">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>开学日期：</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QDateEdit" name="date_edit_begin_date">
+      <property name="maximumDate">
+       <date>
+        <year>9999</year>
+        <month>12</month>
+        <day>31</day>
+       </date>
+      </property>
+      <property name="minimumDate">
+       <date>
+        <year>1970</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLabel" name="label_info">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       </sizepolicy>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menu_bar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>840</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_file">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action_new"/>
+    <addaction name="action_open"/>
+    <addaction name="action_save"/>
+    <addaction name="action_save_as"/>
+    <addaction name="action_quit"/>
+   </widget>
+   <widget class="QMenu" name="menu_help">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action_about"/>
+    <addaction name="action_about_qt"/>
+   </widget>
+   <widget class="QMenu" name="menu_single_item">
+    <property name="title">
+     <string/>
+    </property>
+    <addaction name="action_clear_single_item"/>
+   </widget>
+   <widget class="QMenu" name="menu_all_unmerged">
+    <property name="title">
+     <string/>
+    </property>
+    <addaction name="action_clear_all_items"/>
+    <addaction name="action_merge"/>
+   </widget>
+   <widget class="QMenu" name="menu_all_merged">
+    <property name="title">
+     <string/>
+    </property>
+    <addaction name="action_clear_single_item"/>
+    <addaction name="action_unmerge"/>
+    <addaction name="action_clear_and_unmerge"/>
+   </widget>
+   <widget class="QMenu" name="menu_partially_unmerged">
+    <property name="title">
+     <string/>
+    </property>
+    <addaction name="action_clear_all_items"/>
+    <addaction name="action_merge"/>
+    <addaction name="action_unmerge"/>
+    <addaction name="action_clear_and_unmerge"/>
+   </widget>
+   <addaction name="menu_file"/>
+   <addaction name="menu_help"/>
+   <addaction name="menu_single_item"/>
+   <addaction name="menu_all_unmerged"/>
+   <addaction name="menu_all_merged"/>
+   <addaction name="menu_partially_unmerged"/>
+  </widget>
+  <action name="action_about">
+   <property name="text">
+    <string>关于</string>
+   </property>
+   <property name="iconText">
+    <string>关于</string>
+   </property>
+   <property name="toolTip">
+    <string>关于</string>
+   </property>
+  </action>
+  <action name="action_about_qt">
+   <property name="text">
+    <string>关于Qt</string>
+   </property>
+   <property name="iconText">
+    <string>关于Qt</string>
+   </property>
+   <property name="toolTip">
+    <string>关于Qt</string>
+   </property>
+  </action>
+  <action name="action_new">
+   <property name="text">
+    <string>新建</string>
+   </property>
+   <property name="iconText">
+    <string>新建</string>
+   </property>
+   <property name="toolTip">
+    <string>新建</string>
+   </property>
+  </action>
+  <action name="action_open">
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="iconText">
+    <string>打开</string>
+   </property>
+   <property name="toolTip">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="iconText">
+    <string>保存</string>
+   </property>
+   <property name="toolTip">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="action_save_as">
+   <property name="text">
+    <string>另存为</string>
+   </property>
+   <property name="iconText">
+    <string>另存为</string>
+   </property>
+   <property name="toolTip">
+    <string>另存为</string>
+   </property>
+  </action>
+  <action name="action_quit">
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="iconText">
+    <string>退出</string>
+   </property>
+   <property name="toolTip">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="action_clear_single_item">
+   <property name="text">
+    <string>清除数据</string>
+   </property>
+   <property name="iconText">
+    <string>清除数据</string>
+   </property>
+   <property name="toolTip">
+    <string>清除数据</string>
+   </property>
+  </action>
+  <action name="action_clear_all_items">
+   <property name="text">
+    <string>清除所有数据</string>
+   </property>
+   <property name="iconText">
+    <string>清除所有数据</string>
+   </property>
+   <property name="toolTip">
+    <string>清除所有数据</string>
+   </property>
+  </action>
+  <action name="action_merge">
+   <property name="text">
+    <string>合并</string>
+   </property>
+   <property name="iconText">
+    <string>合并</string>
+   </property>
+   <property name="toolTip">
+    <string>合并</string>
+   </property>
+  </action>
+  <action name="action_unmerge">
+   <property name="text">
+    <string>解除合并</string>
+   </property>
+   <property name="iconText">
+    <string>解除合并</string>
+   </property>
+   <property name="toolTip">
+    <string>解除合并</string>
+   </property>
+  </action>
+  <action name="action_clear_and_unmerge">
+   <property name="text">
+    <string>清除所有数据并解除合并</string>
+   </property>
+   <property name="iconText">
+    <string>清除所有数据并解除合并</string>
+   </property>
+   <property name="toolTip">
+    <string>清除所有数据并解除合并</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
